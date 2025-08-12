@@ -1,6 +1,7 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMore = document.getElementById('loadMore')
 const searchBtn = document.getElementById('search-btn')
+const searchInput = document.getElementById('search')
 let offset = 0
 const limit = 9
 
@@ -36,9 +37,9 @@ function loadPokemonItens(offset, limit){
 function loadPokemonItensByName(name){
     if(name === '') return
 
-    pokeApi.getPokemonsByName(name).then((pokemons = []) => {
-
-    const newHtml = pokemons.map((pokemon) => 
+    pokeApi.getPokemonsByName(name).then((pokemon) => {
+        if(!pokemon) return;
+    const newHtml =
         `<li class="pokemon ${pokemon.type}" data-name="${pokemon.name}">
              <span class="number">#${pokemon.number}</span>
              <span class="name">${pokemon.name}</span>
@@ -50,7 +51,7 @@ function loadPokemonItensByName(name){
              </div>               
              
          </li>
-        `).join('')
+        `
 
     pokemonList.innerHTML = newHtml
     })
@@ -72,7 +73,7 @@ searchBtn.addEventListener('click', () =>{
     searchPokemonName()
 })
 
-searchBtn.addEventListener('keydown', (event) => {
+searchInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault();
         searchPokemonName();
