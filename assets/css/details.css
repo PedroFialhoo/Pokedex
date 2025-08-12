@@ -1,3 +1,31 @@
+#pokemonDetail{
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  padding-bottom: 100px;
+}
+
+
+#poke-img{
+  width: 200px;
+  margin-top: 90px;
+  
+  
+}
+
+h3{
+  align-self: self-start;
+  margin-left: 40px;
+} 
+
+ol{
+  align-self: self-start;
+  list-style: none;
+}
+
 #status{
     width: 600px;
     display: flex;
@@ -12,16 +40,16 @@
 }
 
 .progress-bar-container {
-  width: 100%;
+  width: 70%;
   height: 10px;
-  background-color: #555555;
+  background-color: #808080;
   border-radius: 5px;
-  overflow: hidden; /* Garante que o conteúdo interno não ultrapasse o contêiner */
+  overflow: hidden; 
 }
 
 .progress-bar {
   height: 100%;
   background-color: #4CAF50;
   width: 0%;
-  transition: width 0.5s ease-in-out; /* Animação suave */
+  transition: width 0.5s ease-in-out; 
 }
