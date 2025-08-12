@@ -1,24 +1,52 @@
 *{ 
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;    
-    text-transform: capitalize;
 }
 
 body{
-    background-color: #dedede;
+    background-color: rgb(155, 24, 31);
     padding: 10px;
+}
+
+h1, h2, h3, h4, p, span, li{    
+    text-transform: capitalize;
 }
 
 .content{
     width: 100vw;
     height: 100%;
     padding: 1rem;
-    background-color: white;
+    background-color: rgb(243, 243, 243);
     border-radius: 20px;
-}
+    margin: 0 auto;
+}   
+
 .content h1{
     margin: 10px;
+    margin-bottom: 30px;
+}
 
+.content input{
+    margin-bottom: 10px;
+    border-radius: 1rem;
+    width: 210px;
+    padding: 5px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+button{    
+    background-color: #2b43ff;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    margin: .3rem;
+    font-size: .9rem;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: #4e58a3;
+    color: white;
 }
 
 @media (min-width: 992px){
@@ -28,4 +56,10 @@ body{
         margin: 1rem auto;
         border-radius: 1rem;
     }
+}
+
+@media (min-width: 360px) and (max-width: 415px){
+    .content{
+    width: 85vw;
+    }  
 }

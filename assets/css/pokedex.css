@@ -141,7 +141,7 @@
 }
 
 .pagination button{
-    background-color: #6c79db;
+    background-color: #2b43ff;
     border: none;
     border-radius: 1rem;
     color: white;
@@ -181,3 +181,8 @@
     grid-template-columns: repeat(4, 1fr);
     }
 }
+
+.pokemon:hover{
+    filter: brightness(.8);
+}
+
