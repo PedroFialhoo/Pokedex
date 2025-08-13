@@ -35,12 +35,12 @@ function loadPokemonItens(offset, limit){
 }
 
 function loadPokemonItensByName(name){
-    if(name === '') return
+   if(name === '') return
 
     pokeApi.getPokemonsByName(name).then((pokemon) => {
-    if (!pokemon) return;
+        if(!pokemon) return;
     const newHtml =
-      `<li class="pokemon ${pokemon.type}" data-name="${pokemon.name}">
+        `<li class="pokemon ${pokemon.type}" data-name="${pokemon.name}">
              <span class="number">#${pokemon.number}</span>
              <span class="name">${pokemon.name}</span>
              <div class="detail">
@@ -54,6 +54,13 @@ function loadPokemonItensByName(name){
         `
 
     pokemonList.innerHTML = newHtml
+
+    document.querySelectorAll('#pokemonList li').forEach(li => {
+        li.addEventListener('click', () => {
+            const name = li.getAttribute('data-name');
+            window.location.href = `details.html?pokemon=${name}`;
+        });
+        });
     })
 }
 
