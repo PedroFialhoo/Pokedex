@@ -24,18 +24,18 @@ function loadPokemonItens(offset, limit){
 
     pokemonList.innerHTML += newHtml
 
-    document.querySelectorAll('#pokemonList li').forEach(li => {
-        li.addEventListener('click', () => {
-            const name = li.getAttribute('data-name');
-            window.location.href = `details.html?pokemon=${name}`;
-        });
-        });
+    // document.querySelectorAll('#pokemonList li').forEach(li => {
+    //     li.addEventListener('click', () => {
+    //         const name = li.getAttribute('data-name');
+    //         window.location.href = `details.html?pokemon=${name}`;
+    //     });
+    //     });
 
     })
 }
 
 function loadPokemonItensByName(name){
-    if(name === '') return
+   if(name === '') return
 
     pokeApi.getPokemonsByName(name).then((pokemon) => {
         if(!pokemon) return;
