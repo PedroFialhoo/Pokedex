@@ -2,6 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const pokemonName = urlParams.get('pokemon');
 const pokemonDetail = document.getElementById('pokemonDetail');
 
+
 function loadPokemonItensByName(name) {
     if (!name) {
         pokemonDetail.innerHTML = '<p>Nenhum Pokémon especificado.</p>';
@@ -12,7 +13,7 @@ function loadPokemonItensByName(name) {
     pokeApi.getPokemonsByName(name).then((pokemon)  => {
             const newHtml = `
                     <div class="poke-container">
-                        <div class="poke-background" style="background-image: url('../assets/images/background-${pokemon.type}.png'), url('../assets/images/background-normal.png'); "></div>
+                        <div class="poke-background" style="background-image: url('/Pokedex/assets/images/background-${pokemon.type}.png'), url('/Pokedex/assets/images/background-normal.png'); "></div>
                         <img src="${pokemon.photo}" alt="${pokemon.name}" id="poke-img">
                     </div>
                     <h1 id="pokeName">${pokemon.name}</h1>
