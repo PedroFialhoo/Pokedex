@@ -11,6 +11,7 @@ function convertPokeApiDetailToPokemon(pokeDetail){
     pokemon.types = types
     pokemon.type = type
     pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default
+    pokemon.photoShiny = pokeDetail.sprites.other['official-artwork'].front_shiny
 
     pokemon.height = pokeDetail.height/10
     pokemon.weight = pokeDetail.weight/10
